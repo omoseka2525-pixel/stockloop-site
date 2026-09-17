@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Stockloop config: placeholder domain "https://stockloop.io", placeholder support address "support@stockloop.io", placeholder App Store URL "https://apps.shopify.com/stockloop". Find-replace these three values across the site before going live. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stocky Is Shutting Down: What Shopify Merchants Need to Do Now &mdash; Stockloop Blog</title>
+<meta name="description" content="Stocky shuts down August 31, 2026. Here's the exact timeline, what data you lose, what Shopify keeps natively, and how to migrate without a stockout.">
+<link rel="canonical" href="https://stockloop.io/blog/stocky-shutting-down.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When exactly does Stocky stop working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "August 31, 2026 is the confirmed full shutdown date, per Shopify's own communications reported across multiple app vendors. It was already removed from the Shopify App Store on February 2, 2026, so new installs weren't possible after that date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I lose my Shopify product and order data too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Product listings, variants, current stock levels, order history, and customer data all live in core Shopify, not inside Stocky. Only Stocky-specific data \u2014 its purchase orders, supplier records, and forecasting output \u2014 is at risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I export my supplier list from Stocky before it shuts down?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiple sources report there's no bulk export for supplier records specifically \u2014 you'll need to copy the details manually into a spreadsheet or CSV before losing access. PO history and forecasting reports do have CSV export options within the app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Shopify have a built-in replacement for Stocky?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Partially. Shopify Admin now has native purchase orders, transfers, and adjustments, but as of this writing it has no forecasting, no automatic reorder point calculation, no automated PO generation, and known gaps in how PO costs update product records. For anything beyond basic manual POs, most merchants will need a dedicated app."
+      }
+    }
+  ]
+}
+</script>
+  <link rel="icon" href="../favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Stockloop
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../help/index.html">Help</a>
+        <a href="../blog/index.html" aria-current="page">Blog</a>
+        <a href="../support.html">Support</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-secondary" href="../support.html">Support</a>
+        <a class="btn btn-primary" href="https://apps.shopify.com/stockloop" rel="noopener">Install on Shopify</a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+<main id="main">
+
+<section class="section" style="padding-top:40px;">
+  <div class="container wrap-narrow">
+    <p class="breadcrumbs"><a href="index.html">Blog</a> &rsaquo; Stocky migration</p>
+    <article class="post">
+      <p class="post-meta">Stocky migration &middot; Published September 6, 2026</p>
+      <h1>Stocky Is Shutting Down: What Shopify Merchants Need to Do Now</h1>
+      
+<p>Shopify confirmed Stocky, its free inventory and purchase-order app for POS/retail merchants, is being retired. If you've used it to run reorders, track suppliers, or forecast demand, you're on a clock &mdash; and the clock is shorter than it looks, because the App Store delisting happens well before the actual data cutoff.</p>
+
+<h2>The Stocky sunset timeline</h2>
+<p>Based on Shopify's own communications and coverage from multiple Shopify app vendors tracking the shutdown:</p>
+<ul>
+  <li><strong>July 7, 2025</strong> &mdash; Shopify already removed some Stocky functionality, including certain inventory transfer and min/max forecasting workflows, ahead of the full sunset.</li>
+  <li><strong>February 2, 2026</strong> &mdash; Stocky was delisted from the Shopify App Store. Merchants who didn't already have it installed can no longer add it.</li>
+  <li><strong>August 31, 2026</strong> &mdash; Full shutdown. Shopify's own guidance states all Stocky APIs cease to function on this date. This is the hard deadline for anything that depends on Stocky staying alive &mdash; third-party integrations, custom reports, anything reading from its API.</li>
+</ul>
+<p>If you're reading this after September 6, 2026, note that the deadline has already passed for API access, though multiple sources report Shopify may leave a temporary read-only window open for a transition period (the length of that window has not been consistently confirmed across sources, so verify directly in your Shopify admin rather than assuming).</p>
+
+<h2>Why Shopify is doing this</h2>
+<p>Shopify hasn't published a detailed rationale, but the pattern is consistent with what the company has done elsewhere: consolidate acquired, bolted-on tools into native Admin functionality rather than maintain them as separate apps. Stocky was originally an acquired product built for POS retailers, and Shopify has been building lighter-weight purchase order and inventory features directly into core Admin since 2023. The shutdown reads as Shopify deciding the native version is "good enough" for the workflows it wants to own, and leaving the rest to the app ecosystem.</p>
+
+<h2>What Shopify keeps native (and what it doesn't)</h2>
+<p>This is the part merchants get wrong most often: assuming "Shopify has purchase orders now" means Stocky is redundant. It's a partial replacement.</p>
+<p><strong>What's native to Shopify Admin today:</strong></p>
+<ul>
+  <li>Basic purchase order creation (Products &gt; Purchase Orders), tracking supplier, incoming quantity, and expected arrival</li>
+  <li>Manual inventory transfers between locations</li>
+  <li>Manual stock adjustments</li>
+  <li>Low-level receiving against a PO</li>
+</ul>
+<p><strong>What is not native, and disappears with Stocky:</strong></p>
+<ul>
+  <li>Demand forecasting based on sales velocity</li>
+  <li>Automatic reorder point calculation and min/max triggers</li>
+  <li>Automated PO generation (Shopify's native PO tool requires you to build each one manually)</li>
+  <li>A supplier master/directory with lead times, contact details, and order history in one place</li>
+  <li>Bulk CSV import for POs or products at the purchasing stage</li>
+  <li>Supplier-level analytics (which vendors are slow, which SKUs a supplier covers, cost history)</li>
+  <li>Custom PO fields and barcode-based receiving workflows</li>
+</ul>
+<p>There's also a specific, well-documented gap merchants have flagged in Shopify's own community forums: the native PO system doesn't reliably carry updated unit costs from a PO into the product record, and doesn't handle weighted-average cost when the same SKU comes in at different prices across POs. That's a real operational problem for anyone tracking margin, and it's one of the reasons apps like Stocky existed in the first place.</p>
+
+<h2>What you actually lose access to on August 31</h2>
+<p>Three categories of data are at risk if you don't act:</p>
+<ol>
+  <li><strong>Purchase order history.</strong> Every PO you've created in Stocky &mdash; quantities, costs, supplier, dates &mdash; lives in Stocky's database, not in core Shopify. It does not migrate automatically.</li>
+  <li><strong>Supplier records.</strong> Contact info, lead times, notes, cost history. Multiple sources confirm there is no bulk export for supplier data &mdash; you'll need to copy it manually into a spreadsheet before the cutoff.</li>
+  <li><strong>Demand forecasting and reorder data.</strong> Whatever Stocky calculated about your sales velocity and suggested reorder points is gone once the app is inaccessible. Your actual order history remains in Shopify core (it always lived there), but Stocky's forecasting layer on top of it does not.</li>
+</ol>
+<p>What stays safe regardless: your product catalog, variant data, current stock levels, order history, and customer data. None of that lives in Stocky &mdash; it's core Shopify data and is unaffected by the shutdown.</p>
+
+<h2>What to do now, in order</h2>
+<ol>
+  <li><strong>Export your PO history as CSV</strong> from within Stocky while it's still accessible. Do this even if you haven't picked a replacement yet &mdash; you can't recover it later.</li>
+  <li><strong>Manually document your supplier list</strong> &mdash; name, contact, lead time, cost per SKU, minimum order quantities. There's no export button for this; budget an afternoon.</li>
+  <li><strong>Decide whether native Shopify Admin covers you, or you need a dedicated app.</strong> If you place fewer than a handful of POs a month and don't need forecasting, native Admin plus a spreadsheet might genuinely be enough. If you're managing reorder timing across dozens of SKUs and multiple suppliers, you'll want a replacement app.</li>
+  <li><strong>If replacing Stocky with an app, check whether it has a Stocky CSV importer.</strong> Several of the newer entrants built one specifically for this migration wave &mdash; see our <a href="stocky-alternatives-compared.html">Stocky alternatives comparison</a> for specifics.</li>
+  <li><strong>Test receiving and cost updates before you're relying on the new setup for a live reorder.</strong> The cost-tracking gap in native Shopify (and inconsistent handling in some third-party apps) is the kind of thing that only shows up once you receive a PO at a different unit cost than the last one.</li>
+</ol>
+
+<h2>A note on the transition period</h2>
+<p>If Shopify does leave read-only access open past August 31, treat it as a grace period for finishing your export &mdash; not as a reason to delay. Read-only access has been described as temporary and unconfirmed in duration by third-party trackers, not guaranteed by Shopify in writing anywhere we could verify. Don't build a plan around it.</p>
+
+<h2>Where Stockloop fits</h2>
+<p>We built Stockloop specifically for merchants going through this migration. It does purchase orders, reorder suggestions based on sales velocity and lead time, receiving, and a supplier master &mdash; the core of what Stocky did &mdash; plus a direct Stocky CSV importer so your PO and supplier history don't have to be re-typed by hand. Setup is meant to take minutes: your order history auto-imports on install and you get reorder suggestions right away, not after a week of configuration. Pricing is flat (Free/$29/$59/$99) with no per-order or GMV fees. It's not the only option &mdash; see the <a href="stocky-alternatives-compared.html">alternatives comparison</a> for others worth considering &mdash; but if your main blocker is "I don't want to lose my PO and supplier history and I don't want to rebuild everything from scratch," it's built around exactly that problem.</p>
+
+      <h2>FAQ</h2>
+      <div class="faq-list">
+        <details class="faq-item" data-faq-item data-category="" data-search="When exactly does Stocky stop working? <p>August 31, 2026 is the confirmed full shutdown date, per Shopify's own communications reported across multiple app vendors. It was already removed from the Shopify App Store on February 2, 2026, so new installs weren't possible after that date.</p>">
+  <summary>When exactly does Stocky stop working?</summary>
+  <div class="faq-answer"><p>August 31, 2026 is the confirmed full shutdown date, per Shopify's own communications reported across multiple app vendors. It was already removed from the Shopify App Store on February 2, 2026, so new installs weren't possible after that date.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="" data-search="Will I lose my Shopify product and order data too? <p>No. Product listings, variants, current stock levels, order history, and customer data all live in core Shopify, not inside Stocky. Only Stocky-specific data &mdash; its purchase orders, supplier records, and forecasting output &mdash; is at risk.</p>">
+  <summary>Will I lose my Shopify product and order data too?</summary>
+  <div class="faq-answer"><p>No. Product listings, variants, current stock levels, order history, and customer data all live in core Shopify, not inside Stocky. Only Stocky-specific data &mdash; its purchase orders, supplier records, and forecasting output &mdash; is at risk.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="" data-search="Can I export my supplier list from Stocky before it shuts down? <p>Multiple sources report there's no bulk export for supplier records specifically &mdash; you'll need to copy the details manually into a spreadsheet or CSV before losing access. PO history and forecasting reports do have CSV export options within the app.</p>">
+  <summary>Can I export my supplier list from Stocky before it shuts down?</summary>
+  <div class="faq-answer"><p>Multiple sources report there's no bulk export for supplier records specifically &mdash; you'll need to copy the details manually into a spreadsheet or CSV before losing access. PO history and forecasting reports do have CSV export options within the app.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="" data-search="Does Shopify have a built-in replacement for Stocky? <p>Partially. Shopify Admin now has native purchase orders, transfers, and adjustments, but as of this writing it has no forecasting, no automatic reorder point calculation, no automated PO generation, and known gaps in how PO costs update product records. For anything beyond basic manual POs, most merchants will need a dedicated app.</p>">
+  <summary>Does Shopify have a built-in replacement for Stocky?</summary>
+  <div class="faq-answer"><p>Partially. Shopify Admin now has native purchase orders, transfers, and adjustments, but as of this writing it has no forecasting, no automatic reorder point calculation, no automated PO generation, and known gaps in how PO costs update product records. For anything beyond basic manual POs, most merchants will need a dedicated app.</p></div>
+</details>
+      </div>
+      <div class="article-cta">
+        <p>Migrating from Stocky, or want to see reorder suggestions for your own store?</p>
+        <a class="btn btn-primary" href="https://apps.shopify.com/stockloop" rel="noopener">Install Stockloop on Shopify</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Stockloop</div>
+          <p class="footer-tag">Purchase orders, reorder suggestions, and receiving for Shopify merchants moving on from Stocky.</p>
+        </div>
+        <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../help/index.html">Help Center</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../support.html">Support</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Migrating</h4>
+        <ul>
+          <li><a href="../index.html#stocky-faq">Stocky migration FAQ</a></li>
+          <li><a href="../help/migrating-from-stocky.html">Import from Stocky</a></li>
+          <li><a href="../blog/reorder-point-formula.html">Reorder point math</a></li>
+        </ul>
+      </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Omoseka Inc. All rights reserved.</span>
+        <span>Stockloop is not affiliated with or endorsed by Shopify Inc.</span>
+      </div>
+    </div>
+  </footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Stockloop config: placeholder domain "https://stockloop.io", placeholder support address "support@stockloop.io", placeholder App Store URL "https://apps.shopify.com/stockloop". Find-replace these three values across the site before going live. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Purchase Orders in Shopify Without Stocky: 3 Ways, and When Each Makes Sense &mdash; Stockloop Blog</title>
+<meta name="description" content="With Stocky gone, here are 3 real ways to manage Shopify purchase orders — native Admin, a dedicated app, or a full ERP — and how to pick.">
+<link rel="canonical" href="https://stockloop.io/blog/purchase-orders-without-stocky.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I just keep using Shopify's native purchase order tool forever?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if your volume and complexity stay low. It's a real, permanent feature, not a stopgap \u2014 but it has no forecasting and a known cost-tracking limitation, so it's a fit for simple operations, not a scaling one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an app at all if I only have 2-3 suppliers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Possibly not \u2014 native Admin plus a simple spreadsheet for supplier details can genuinely cover a small, simple operation. The tipping point is usually when you start missing reorder timing or losing track of which supplier covers which SKU at which lead time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the real difference between a purchasing app and an ERP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A purchasing app assumes you buy finished goods and resell them \u2014 its job is timing and supplier management. An ERP assumes you manufacture \u2014 its job includes bills of materials, production scheduling, and raw-material purchasing tied to a build plan. Using an ERP when you don't manufacture is usually overkill."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is flat pricing actually better than usage-based pricing for a purchasing app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your volume trajectory. Flat pricing is more predictable and tends to be cheaper as you scale; usage-based or per-order pricing can look attractive at low volume but compounds as order count grows. Model out your expected volume against both pricing structures before committing."
+      }
+    }
+  ]
+}
+</script>
+  <link rel="icon" href="../favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Stockloop
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../help/index.html">Help</a>
+        <a href="../blog/index.html" aria-current="page">Blog</a>
+        <a href="../support.html">Support</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-secondary" href="../support.html">Support</a>
+        <a class="btn btn-primary" href="https://apps.shopify.com/stockloop" rel="noopener">Install on Shopify</a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+<main id="main">
+
+<section class="section" style="padding-top:40px;">
+  <div class="container wrap-narrow">
+    <p class="breadcrumbs"><a href="index.html">Blog</a> &rsaquo; Purchase orders</p>
+    <article class="post">
+      <p class="post-meta">Purchase orders &middot; Published September 6, 2026</p>
+      <h1>Purchase Orders in Shopify Without Stocky: 3 Ways, and When Each Makes Sense</h1>
+      
+<p>Stocky's shutdown (fully offline August 31, 2026) leaves a real gap for merchants who relied on it for purchasing. There isn't one universal replacement &mdash; there are three genuinely different approaches, and the right one depends on your order volume, catalog complexity, and whether you manufacture or just resell.</p>
+
+<h2>Option 1: Shopify's native purchase order tool</h2>
+<p>Shopify Admin has had a native purchase order feature since 2023 (Products &gt; Purchase Orders), independent of Stocky. It lets you record a supplier, line items, incoming quantities, costs, and expected arrival, and receive against the PO to update inventory.</p>
+<p><strong>What it's good for:</strong> Low PO volume, simple catalogs, merchants who don't need forecasting or a supplier analytics layer &mdash; just a record of what's on order and when it's expected.</p>
+<p><strong>Where it falls short, confirmed by merchant reports in Shopify's own community forums:</strong></p>
+<ul>
+  <li>No demand forecasting or automatic reorder point calculation &mdash; you decide what and when to order entirely manually</li>
+  <li>No bulk CSV import for building POs</li>
+  <li>A documented cost-tracking gap: updating a product's cost doesn't flow into new POs automatically, and receiving a PO doesn't reliably update the product's cost record &mdash; a real problem if the same SKU comes in at different unit costs over time and you're tracking margin</li>
+  <li>No supplier master with lead times, MOQs, or order history in one place &mdash; you're tracking that elsewhere, likely a spreadsheet</li>
+</ul>
+<p><strong>When to choose it:</strong> You place a handful of POs a month, your supplier list is short enough to hold in your head or a simple spreadsheet, and you don't need forecasting. It costs nothing extra and it's already in your Admin.</p>
+
+<h2>Option 2: A dedicated Shopify purchasing/forecasting app</h2>
+<p>This is the direct Stocky-replacement category &mdash; apps like Prediko, Stockloop, and others built specifically around reorder suggestions, PO creation, receiving, and a supplier master, layered on top of (not replacing) Shopify's own product and order data.</p>
+<p><strong>What it's good for:</strong> Merchants with enough SKUs and suppliers that manual tracking has started causing stockouts or overstock, but who aren't manufacturing and don't need production planning, BOMs, or multi-entity accounting.</p>
+<p><strong>What varies significantly between apps in this category:</strong></p>
+<ul>
+  <li><strong>Pricing model</strong> &mdash; flat monthly (e.g., Stockloop's Free/$29/$59/$99, no GMV or per-order fees) versus tiered-by-usage models some competitors use. Usage-based pricing can look cheap at low volume and get expensive fast as you scale.</li>
+  <li><strong>Forecasting sophistication</strong> &mdash; some apps do simple trailing-average velocity calculations; others (Prediko, notably) lead with AI-based demand prediction trained across a larger dataset.</li>
+  <li><strong>Migration support</strong> &mdash; given the Stocky shutdown timing, several newer entrants specifically built Stocky CSV importers; older, more general tools may not have this.</li>
+  <li><strong>Setup time</strong> &mdash; some require manual product/supplier data entry to get started; others auto-import your existing Shopify order history so forecasting can begin without a manual setup phase.</li>
+</ul>
+<p><strong>When to choose it:</strong> You're actively managing reorder timing across a meaningful SKU count and multiple suppliers, cost tracking on margin matters to you, and you want the Stocky-shaped workflow back without inheriting Stocky's own performance issues or Shopify's native cost-tracking gap.</p>
+
+<h2>Option 3: A full ERP (e.g., MRPeasy)</h2>
+<p>If you manufacture &mdash; meaning you buy raw materials and produce finished goods, rather than buying finished goods to resell &mdash; a purchasing app built for resellers won't cover you. You need bill-of-materials tracking, production scheduling, and raw-material purchasing tied to a production plan.</p>
+<p><strong>What it's good for:</strong> Small manufacturers who happened to use Stocky as a lightweight substitute for real production planning, and are outgrowing that anyway.</p>
+<p><strong>Tradeoffs:</strong> Per-user pricing (MRPeasy starts at $49/user/month and scales up by tier, reaching $149/user/month at the top published tier) means costs climb with team size, and the learning curve is real &mdash; this is enterprise-resource-planning software, not a lightweight app. It also connects to Shopify as an integration rather than being built Shopify-first, so expect a setup phase.</p>
+<p><strong>When to choose it:</strong> You're manufacturing, not reselling, and you've already outgrown "purchasing app" as a category regardless of Stocky's shutdown.</p>
+
+<h2>A decision framework</h2>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Your situation</th><th>Best fit</th></tr></thead>
+<tbody>
+<tr><td>Few POs/month, simple catalog, no forecasting need</td><td>Native Shopify Admin</td></tr>
+<tr><td>Meaningful SKU/supplier count, want reorder suggestions and a supplier master, reselling finished goods</td><td>A dedicated purchasing app</td></tr>
+<tr><td>You manufacture and need BOMs/production scheduling</td><td>A full ERP</td></tr>
+<tr><td>Margin tracking on fluctuating unit costs matters a lot</td><td>Skip native Admin &mdash; its cost-tracking gap is a real limitation &mdash; and lean toward a dedicated app or ERP with real cost handling</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Where Stockloop fits</h2>
+<p>Stockloop sits squarely in option 2: purchase orders, reorder suggestions from sales velocity and lead time, receiving, a supplier master, and a Stocky CSV importer, at flat pricing with no GMV or per-order fees. It's built for merchants who are resellers rather than manufacturers, and who want the setup to be fast &mdash; order history imports automatically on install, and initial reorder suggestions are available within minutes rather than after a manual data-loading process. If you fall into the ERP category (option 3) or the "few POs a month" category (option 1), it's genuinely not the right fit, and that's fine &mdash; better to pick the right category than the most-marketed tool in the wrong one.</p>
+
+      <h2>FAQ</h2>
+      <div class="faq-list">
+        <details class="faq-item" data-faq-item data-category="" data-search="Can I just keep using Shopify's native purchase order tool forever? <p>Yes, if your volume and complexity stay low. It's a real, permanent feature, not a stopgap &mdash; but it has no forecasting and a known cost-tracking limitation, so it's a fit for simple operations, not a scaling one.</p>">
+  <summary>Can I just keep using Shopify's native purchase order tool forever?</summary>
+  <div class="faq-answer"><p>Yes, if your volume and complexity stay low. It's a real, permanent feature, not a stopgap &mdash; but it has no forecasting and a known cost-tracking limitation, so it's a fit for simple operations, not a scaling one.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="" data-search="Do I need an app at all if I only have 2-3 suppliers? <p>Possibly not &mdash; native Admin plus a simple spreadsheet for supplier details can genuinely cover a small, simple operation. The tipping point is usually when you start missing reorder timing or losing track of which supplier covers which SKU at which lead time.</p>">
+  <summary>Do I need an app at all if I only have 2-3 suppliers?</summary>
+  <div class="faq-answer"><p>Possibly not &mdash; native Admin plus a simple spreadsheet for supplier details can genuinely cover a small, simple operation. The tipping point is usually when you start missing reorder timing or losing track of which supplier covers which SKU at which lead time.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="" data-search="What's the real difference between a purchasing app and an ERP? <p>A purchasing app assumes you buy finished goods and resell them &mdash; its job is timing and supplier management. An ERP assumes you manufacture &mdash; its job includes bills of materials, production scheduling, and raw-material purchasing tied to a build plan. Using an ERP when you don't manufacture is usually overkill.</p>">
+  <summary>What's the real difference between a purchasing app and an ERP?</summary>
+  <div class="faq-answer"><p>A purchasing app assumes you buy finished goods and resell them &mdash; its job is timing and supplier management. An ERP assumes you manufacture &mdash; its job includes bills of materials, production scheduling, and raw-material purchasing tied to a build plan. Using an ERP when you don't manufacture is usually overkill.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="" data-search="Is flat pricing actually better than usage-based pricing for a purchasing app? <p>It depends on your volume trajectory. Flat pricing is more predictable and tends to be cheaper as you scale; usage-based or per-order pricing can look attractive at low volume but compounds as order count grows. Model out your expected volume against both pricing structures before committing.</p>">
+  <summary>Is flat pricing actually better than usage-based pricing for a purchasing app?</summary>
+  <div class="faq-answer"><p>It depends on your volume trajectory. Flat pricing is more predictable and tends to be cheaper as you scale; usage-based or per-order pricing can look attractive at low volume but compounds as order count grows. Model out your expected volume against both pricing structures before committing.</p></div>
+</details>
+      </div>
+      <div class="article-cta">
+        <p>Migrating from Stocky, or want to see reorder suggestions for your own store?</p>
+        <a class="btn btn-primary" href="https://apps.shopify.com/stockloop" rel="noopener">Install Stockloop on Shopify</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Stockloop</div>
+          <p class="footer-tag">Purchase orders, reorder suggestions, and receiving for Shopify merchants moving on from Stocky.</p>
+        </div>
+        <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../help/index.html">Help Center</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../support.html">Support</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Migrating</h4>
+        <ul>
+          <li><a href="../index.html#stocky-faq">Stocky migration FAQ</a></li>
+          <li><a href="../help/migrating-from-stocky.html">Import from Stocky</a></li>
+          <li><a href="../blog/reorder-point-formula.html">Reorder point math</a></li>
+        </ul>
+      </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Omoseka Inc. All rights reserved.</span>
+        <span>Stockloop is not affiliated with or endorsed by Shopify Inc.</span>
+      </div>
+    </div>
+  </footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Stockloop config: placeholder domain "https://stockloop.io", placeholder support address "support@stockloop.io", placeholder App Store URL "https://apps.shopify.com/stockloop". Find-replace these three values across the site before going live. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Export Your Stocky Purchase Orders and Suppliers Before Losing Access &mdash; Stockloop Blog</title>
+<meta name="description" content="Stocky shuts down August 31, 2026. Here's what's known about exporting your PO history and supplier data, and what to verify yourself before the deadline.">
+<link rel="canonical" href="https://stockloop.io/blog/export-stocky-data.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I export all my Stocky purchase orders at once, or one at a time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This isn't consistently documented across available sources \u2014 some describe per-PO CSV export as the reliable method, others reference a reports section that may allow a bulk pull. Check your own Stocky instance and Shopify's official Help Center documentation before assuming either way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't I bulk-export my supplier list?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiple independent sources confirm there is no bulk export specifically for supplier records in Stocky. It appears to require manual copying, supplier by supplier, into a spreadsheet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I lose my product and order history too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No \u2014 that data lives in core Shopify Admin, not inside Stocky, and is unaffected by the shutdown regardless of what you do with Stocky-specific exports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an official Shopify export tool or guide for this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shopify's Help Center has documentation on Stocky's purchase order and receiving workflows; check there directly for the current, authoritative export steps rather than relying solely on third-party summaries, since exact UI details can change and aren't always current in secondhand coverage."
+      }
+    }
+  ]
+}
+</script>
+  <link rel="icon" href="../favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Stockloop
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../help/index.html">Help</a>
+        <a href="../blog/index.html" aria-current="page">Blog</a>
+        <a href="../support.html">Support</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-secondary" href="../support.html">Support</a>
+        <a class="btn btn-primary" href="https://apps.shopify.com/stockloop" rel="noopener">Install on Shopify</a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+<main id="main">
+
+<section class="section" style="padding-top:40px;">
+  <div class="container wrap-narrow">
+    <p class="breadcrumbs"><a href="index.html">Blog</a> &rsaquo; Stocky migration</p>
+    <article class="post">
+      <p class="post-meta">Stocky migration &middot; Published September 6, 2026</p>
+      <h1>How to Export Your Stocky Purchase Orders and Suppliers Before Losing Access</h1>
+      
+<p>If you use Stocky, the single most time-sensitive task on your list is getting your data out before the shutdown. Here's what's confirmed across current sources, and &mdash; just as important &mdash; what isn't confirmed, so you know what to double-check yourself rather than assume.</p>
+
+<h2>The deadline, again</h2>
+<p>Stocky was delisted from the Shopify App Store on February 2, 2026. Full API shutdown is set for August 31, 2026. If you already have Stocky installed, you should still have working access up to that date (and possibly a temporary read-only window after, though that isn't reliably confirmed &mdash; don't plan around it).</p>
+
+<h2>What's confirmed you can export</h2>
+<p>Based on current third-party reporting on the shutdown:</p>
+<ul>
+  <li><strong>Purchase order history</strong> &mdash; exportable as CSV, PO by PO, from within the Stocky app.</li>
+  <li><strong>Demand forecasting / inventory reports</strong> &mdash; also reported as CSV-exportable from Stocky's reporting section.</li>
+  <li><strong>Transfer and stock adjustment records</strong> &mdash; reported as exportable for multi-location merchants, though the exact export path (per-location vs. bulk) isn't consistently detailed across sources.</li>
+</ul>
+
+<h2>What's confirmed you cannot bulk-export</h2>
+<ul>
+  <li><strong>Supplier records.</strong> Multiple independent sources agree there is no bulk export path for supplier data specifically &mdash; contact details, lead times, cost history per SKU, minimum order quantities. You will need to open each supplier record and copy the details manually into a spreadsheet.</li>
+</ul>
+<p>This is the step people skip because it's tedious, and it's the one that costs the most to redo later. If you have more than a handful of suppliers, block real time for it &mdash; treat it like data entry, because that's what it is.</p>
+
+<h2>What's genuinely uncertain &mdash; verify these yourself</h2>
+<p>Being honest about the limits of public information here: exact button locations, the precise CSV schema, and whether there's a "select all POs" bulk export versus one-at-a-time export are not consistently documented across the sources available. Before you rely on a specific workflow, do this:</p>
+<ol>
+  <li><strong>Open Stocky's own export/reports section and look for a bulk export option first.</strong> Third-party guides suggest per-PO export is the fallback if a "select all" option isn't available for your Stocky version, but check yours directly.</li>
+  <li><strong>Check Shopify's Help Center Stocky documentation</strong> for the current, official export instructions &mdash; this is more likely to be accurate and current than any third-party summary, including this one.</li>
+  <li><strong>Export early, not at the deadline.</strong> If a bulk option does exist but stalls on a large PO history, you want time to fall back to a manual approach.</li>
+</ol>
+
+<h2>A practical export checklist</h2>
+<p>Regardless of the exact button layout, the categories of data to capture before August 31, 2026 are:</p>
+<ul class="checklist">
+  <li>All purchase orders (PO number, supplier, line items, quantities, unit costs, dates, status) &mdash; CSV export</li>
+  <li>Supplier directory (name, contact, lead time, MOQ, cost per SKU, notes) &mdash; manual copy, no bulk export confirmed</li>
+  <li>Inventory/demand forecasting reports, if you want a historical record of what Stocky was predicting &mdash; CSV export</li>
+  <li>Transfer records between locations, if applicable &mdash; export path varies, check your Stocky version</li>
+  <li>Stock adjustment history, if you rely on it for audit purposes</li>
+</ul>
+<p>Separately, and this is good news: your <strong>product catalog, variants, current stock levels, order history, and customer data all live in core Shopify</strong>, not in Stocky. You do not need to export any of that &mdash; it isn't going anywhere.</p>
+
+<h2>What to do with the export once you have it</h2>
+<p>A raw folder of CSVs isn't useful on its own. Depending on what you land on for a replacement:</p>
+<ul>
+  <li><strong>If you're moving to a dedicated PO/reordering app</strong>, check whether it has a direct Stocky-format importer before you manually reformat anything. Several newer tools built one specifically because of this shutdown wave (Prediko and Stockloop both advertise this).</li>
+  <li><strong>If you're staying with native Shopify Admin plus spreadsheets</strong>, keep the supplier spreadsheet as your live source of truth going forward, since Shopify Admin has no supplier master of its own.</li>
+  <li><strong>Keep a static, dated archive copy regardless</strong> &mdash; even after you migrate, having the original Stocky export as a historical record protects you if a migration import drops or reformats a field incorrectly.</li>
+</ul>
+
+<h2>Where Stockloop fits</h2>
+<p>We built a Stocky CSV importer into Stockloop specifically because of this transition &mdash; you export what you can from Stocky, and it reconciles that against a fresh sales-velocity and lead-time calculation rather than making you manually rebuild your supplier list and reorder logic from scratch. It won't solve the "no bulk supplier export" problem for you &mdash; that data entry step happens on the Stocky side regardless of what you migrate to &mdash; but it does mean the PO history and product data you do export doesn't need to be retyped a second time.</p>
+
+      <h2>FAQ</h2>
+      <div class="faq-list">
+        <details class="faq-item" data-faq-item data-category="" data-search="Can I export all my Stocky purchase orders at once, or one at a time? <p>This isn't consistently documented across available sources &mdash; some describe per-PO CSV export as the reliable method, others reference a reports section that may allow a bulk pull. Check your own Stocky instance and Shopify's official Help Center documentation before assuming either way.</p>">
+  <summary>Can I export all my Stocky purchase orders at once, or one at a time?</summary>
+  <div class="faq-answer"><p>This isn't consistently documented across available sources &mdash; some describe per-PO CSV export as the reliable method, others reference a reports section that may allow a bulk pull. Check your own Stocky instance and Shopify's official Help Center documentation before assuming either way.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="" data-search="Why can't I bulk-export my supplier list? <p>Multiple independent sources confirm there is no bulk export specifically for supplier records in Stocky. It appears to require manual copying, supplier by supplier, into a spreadsheet.</p>">
+  <summary>Why can't I bulk-export my supplier list?</summary>
+  <div class="faq-answer"><p>Multiple independent sources confirm there is no bulk export specifically for supplier records in Stocky. It appears to require manual copying, supplier by supplier, into a spreadsheet.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="" data-search="Will I lose my product and order history too? <p>No &mdash; that data lives in core Shopify Admin, not inside Stocky, and is unaffected by the shutdown regardless of what you do with Stocky-specific exports.</p>">
+  <summary>Will I lose my product and order history too?</summary>
+  <div class="faq-answer"><p>No &mdash; that data lives in core Shopify Admin, not inside Stocky, and is unaffected by the shutdown regardless of what you do with Stocky-specific exports.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="" data-search="Is there an official Shopify export tool or guide for this? <p>Shopify's Help Center has documentation on Stocky's purchase order and receiving workflows; check there directly for the current, authoritative export steps rather than relying solely on third-party summaries, since exact UI details can change and aren't always current in secondhand coverage.</p>">
+  <summary>Is there an official Shopify export tool or guide for this?</summary>
+  <div class="faq-answer"><p>Shopify's Help Center has documentation on Stocky's purchase order and receiving workflows; check there directly for the current, authoritative export steps rather than relying solely on third-party summaries, since exact UI details can change and aren't always current in secondhand coverage.</p></div>
+</details>
+      </div>
+      <div class="article-cta">
+        <p>Migrating from Stocky, or want to see reorder suggestions for your own store?</p>
+        <a class="btn btn-primary" href="https://apps.shopify.com/stockloop" rel="noopener">Install Stockloop on Shopify</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Stockloop</div>
+          <p class="footer-tag">Purchase orders, reorder suggestions, and receiving for Shopify merchants moving on from Stocky.</p>
+        </div>
+        <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../help/index.html">Help Center</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../support.html">Support</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Migrating</h4>
+        <ul>
+          <li><a href="../index.html#stocky-faq">Stocky migration FAQ</a></li>
+          <li><a href="../help/migrating-from-stocky.html">Import from Stocky</a></li>
+          <li><a href="../blog/reorder-point-formula.html">Reorder point math</a></li>
+        </ul>
+      </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Omoseka Inc. All rights reserved.</span>
+        <span>Stockloop is not affiliated with or endorsed by Shopify Inc.</span>
+      </div>
+    </div>
+  </footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>

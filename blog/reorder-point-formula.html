@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Stockloop config: placeholder domain "https://stockloop.io", placeholder support address "support@stockloop.io", placeholder App Store URL "https://apps.shopify.com/stockloop". Find-replace these three values across the site before going live. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reorder Point Formula for Shopify Stores: A Practical Guide With Examples &mdash; Stockloop Blog</title>
+<meta name="description" content="The reorder point formula explained for Shopify sellers, with a worked example, safety stock guidance, and where Shopify's own native tools fall short.">
+<link rel="canonical" href="https://stockloop.io/blog/reorder-point-formula.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's a good starting lead time if I don't know my actual supplier lead time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the supplier's quoted lead time as a starting point, but start logging actual received dates against PO dates immediately \u2014 most operators find their real average is longer than quoted, and that gap is exactly what safety stock needs to cover."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I recalculate reorder points?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sales velocity shifts with trends, seasonality, and marketing pushes, so recalculating monthly at minimum is reasonable for a manual process; automated tools typically recalculate continuously as new order data comes in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Shopify calculate reorder points natively?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Shopify's native Admin purchase order tools let you create and receive POs manually but don't calculate reorder points, flag low-stock SKUs against a threshold, or forecast demand \u2014 that functionality left with Stocky and currently requires a third-party app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I sell a new product with no sales history?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There's no clean formula fix for this \u2014 use a comparable existing product's velocity as a proxy, order conservatively for the first cycle, and replace the estimate with real data as soon as you have a few weeks of actual sales."
+      }
+    }
+  ]
+}
+</script>
+  <link rel="icon" href="../favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Stockloop
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../help/index.html">Help</a>
+        <a href="../blog/index.html" aria-current="page">Blog</a>
+        <a href="../support.html">Support</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-secondary" href="../support.html">Support</a>
+        <a class="btn btn-primary" href="https://apps.shopify.com/stockloop" rel="noopener">Install on Shopify</a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+<main id="main">
+
+<section class="section" style="padding-top:40px;">
+  <div class="container wrap-narrow">
+    <p class="breadcrumbs"><a href="index.html">Blog</a> &rsaquo; Reorder math</p>
+    <article class="post">
+      <p class="post-meta">Reorder math &middot; Published September 6, 2026</p>
+      <h1>Reorder Point Formula for Shopify Stores: A Practical Guide With Examples</h1>
+      
+<p>If you've ever run out of a bestseller because you reordered "when it felt low," a reorder point turns that gut feeling into a number. Here's the actual formula, a worked example, and where it gets more complicated than the textbook version.</p>
+
+<h2>The formula</h2>
+<p>The standard reorder point formula, consistent with Shopify's own published guidance:</p>
+<pre>Reorder Point (ROP) = (Average Daily Sales Velocity &times; Lead Time in Days) + Safety Stock</pre>
+<p>If you want the bare-minimum version without a safety buffer:</p>
+<pre>ROP = Average Daily Sales Velocity &times; Lead Time in Days</pre>
+<p>Most operators shouldn't use the bare-minimum version &mdash; it assumes your supplier is always on time and your sales are perfectly steady, which is rarely true.</p>
+
+<h2>Worked example</h2>
+<p>Using the numbers from Shopify's own published example:</p>
+<ul>
+  <li>Daily sales velocity: 5 units/day</li>
+  <li>Lead time: 35 days</li>
+  <li>Safety stock: 15 units</li>
+</ul>
+<pre>ROP = (5 &times; 35) + 15 = 190</pre>
+<p>When your stock on hand hits 190 units, it's time to place the reorder &mdash; not when it hits zero, and not "sometime before it hits zero."</p>
+
+<h2>Where each input actually comes from</h2>
+<p><strong>Daily sales velocity.</strong> Use a trailing average, not a single day. A 30 or 60-day trailing average smooths out day-to-day noise; for seasonal products, you may need a longer window or a seasonally-adjusted figure, since a straight trailing average will underestimate demand heading into a peak and overestimate it heading out of one.</p>
+<p><strong>Lead time.</strong> This is supplier lead time &mdash; the days between placing a PO and having stock available to sell, not just "days until the box arrives." If you have to receive, inspect, and shelve inventory before it's sellable, include that. Track your actual historical lead times per supplier rather than using their quoted lead time; quoted and actual often diverge, especially overseas.</p>
+<p><strong>Safety stock.</strong> This is the part with no universal formula &mdash; Shopify's own guidance acknowledges it's business-specific, driven by how variable your demand is, how reliable your supplier's lead time actually is, and how much of a stockout you can tolerate. A common practical approach: look at your worst historical lead-time overrun and your highest demand spike over a comparable period, and size safety stock to survive both happening at once, scaled down by how likely you think that combination actually is for this specific SKU.</p>
+
+<h2>Reorder point vs. safety stock &mdash; they're not the same thing</h2>
+<p>It's easy to conflate these. Safety stock is a buffer quantity; reorder point is a trigger threshold that includes that buffer. Safety stock answers "how much slack do I need." Reorder point answers "at what stock level do I act." Get the distinction wrong and you'll either double-count your buffer or forget it entirely.</p>
+
+<h2>A common mistake: one ROP for your whole catalog</h2>
+<p>Sales velocity and lead time vary by SKU, sometimes drastically &mdash; a fast-moving core SKU from a local supplier has a completely different ROP profile than a slow-moving seasonal item from an overseas supplier with a 60-day lead time. Calculating one blanket reorder point across your catalog (or worse, using a single "reorder when stock hits 10 units" rule for everything) is the single most common way merchants both overstock slow movers and stock out on fast ones simultaneously.</p>
+
+<h2>Where this breaks down without tooling</h2>
+<p>The formula is simple. Applying it correctly across a real catalog, with real supplier variability, is not &mdash; which is the actual reason forecasting apps exist. Manually recalculating ROP per SKU as sales velocity shifts, lead times drift, and new products launch is a spreadsheet job that scales badly past a few dozen SKUs. This is also exactly the gap left by Stocky's shutdown: Shopify's native Admin has no reorder point automation at all as of this writing &mdash; you can create a manual purchase order, but nothing calculates when you should, or flags that a SKU has crossed its threshold.</p>
+
+<h2>What good tooling actually adds on top of the formula</h2>
+<ul>
+  <li>Recalculating sales velocity continuously as new orders come in, rather than as a manual monthly exercise</li>
+  <li>Tracking actual (not quoted) lead time per supplier, per SKU, over time</li>
+  <li>Flagging SKUs that have crossed their reorder point before you go looking for them</li>
+  <li>Letting safety stock vary by SKU risk profile instead of being one flat number</li>
+</ul>
+
+<h2>Where Stockloop fits</h2>
+<p>This is the core mechanic Stockloop is built around: reorder suggestions calculated from actual sales velocity and lead time per SKU, generated automatically rather than requiring you to run the formula manually in a spreadsheet. On install, your order history imports automatically and initial suggestions are available within minutes &mdash; the goal is that you get to "here's what to reorder and when" without first having to build the tracking system this article just described.</p>
+
+      <h2>FAQ</h2>
+      <div class="faq-list">
+        <details class="faq-item" data-faq-item data-category="" data-search="What's a good starting lead time if I don't know my actual supplier lead time? <p>Use the supplier's quoted lead time as a starting point, but start logging actual received dates against PO dates immediately &mdash; most operators find their real average is longer than quoted, and that gap is exactly what safety stock needs to cover.</p>">
+  <summary>What's a good starting lead time if I don't know my actual supplier lead time?</summary>
+  <div class="faq-answer"><p>Use the supplier's quoted lead time as a starting point, but start logging actual received dates against PO dates immediately &mdash; most operators find their real average is longer than quoted, and that gap is exactly what safety stock needs to cover.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="" data-search="How often should I recalculate reorder points? <p>Sales velocity shifts with trends, seasonality, and marketing pushes, so recalculating monthly at minimum is reasonable for a manual process; automated tools typically recalculate continuously as new order data comes in.</p>">
+  <summary>How often should I recalculate reorder points?</summary>
+  <div class="faq-answer"><p>Sales velocity shifts with trends, seasonality, and marketing pushes, so recalculating monthly at minimum is reasonable for a manual process; automated tools typically recalculate continuously as new order data comes in.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="" data-search="Does Shopify calculate reorder points natively? <p>No. Shopify's native Admin purchase order tools let you create and receive POs manually but don't calculate reorder points, flag low-stock SKUs against a threshold, or forecast demand &mdash; that functionality left with Stocky and currently requires a third-party app.</p>">
+  <summary>Does Shopify calculate reorder points natively?</summary>
+  <div class="faq-answer"><p>No. Shopify's native Admin purchase order tools let you create and receive POs manually but don't calculate reorder points, flag low-stock SKUs against a threshold, or forecast demand &mdash; that functionality left with Stocky and currently requires a third-party app.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="" data-search="What if I sell a new product with no sales history? <p>There's no clean formula fix for this &mdash; use a comparable existing product's velocity as a proxy, order conservatively for the first cycle, and replace the estimate with real data as soon as you have a few weeks of actual sales.</p>">
+  <summary>What if I sell a new product with no sales history?</summary>
+  <div class="faq-answer"><p>There's no clean formula fix for this &mdash; use a comparable existing product's velocity as a proxy, order conservatively for the first cycle, and replace the estimate with real data as soon as you have a few weeks of actual sales.</p></div>
+</details>
+      </div>
+      <div class="article-cta">
+        <p>Migrating from Stocky, or want to see reorder suggestions for your own store?</p>
+        <a class="btn btn-primary" href="https://apps.shopify.com/stockloop" rel="noopener">Install Stockloop on Shopify</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Stockloop</div>
+          <p class="footer-tag">Purchase orders, reorder suggestions, and receiving for Shopify merchants moving on from Stocky.</p>
+        </div>
+        <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../help/index.html">Help Center</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../support.html">Support</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Migrating</h4>
+        <ul>
+          <li><a href="../index.html#stocky-faq">Stocky migration FAQ</a></li>
+          <li><a href="../help/migrating-from-stocky.html">Import from Stocky</a></li>
+          <li><a href="../blog/reorder-point-formula.html">Reorder point math</a></li>
+        </ul>
+      </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Omoseka Inc. All rights reserved.</span>
+        <span>Stockloop is not affiliated with or endorsed by Shopify Inc.</span>
+      </div>
+    </div>
+  </footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>
