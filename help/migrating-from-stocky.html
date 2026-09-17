@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Stockloop config: placeholder domain "https://stockloop.io", placeholder support address "support@stockloop.io", placeholder App Store URL "https://apps.shopify.com/stockloop". Find-replace these three values across the site before going live. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Migrating from Stocky &mdash; Stockloop Help</title>
+<meta name="description" content="Stocky shuts down August 31, 2026 &mdash; here's exactly how to bring your data into Stockloop before then. Stockloop help center category.">
+<link rel="canonical" href="https://stockloop.io/help/migrating-from-stocky.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+
+  <link rel="icon" href="../favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Stockloop
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../help/index.html" aria-current="page">Help</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="../support.html">Support</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-secondary" href="../support.html">Support</a>
+        <a class="btn btn-primary" href="https://apps.shopify.com/stockloop" rel="noopener">Install on Shopify</a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+<main id="main">
+
+<section class="section" style="padding-top:40px;">
+  <div class="container wrap-narrow">
+    <p class="breadcrumbs"><a href="index.html">Help Center</a> &rsaquo; Migrating from Stocky</p>
+    <h1>Migrating from Stocky</h1>
+    <p style="color:var(--text-muted); font-size:var(--text-md); margin-bottom:24px;">Stocky shuts down August 31, 2026 &mdash; here's exactly how to bring your data into Stockloop before then.</p>
+    <div class="help-category-nav">
+      <a href="getting-started.html">Getting Started</a>
+      <a href="migrating-from-stocky.html" class="is-active">Migrating from Stocky</a>
+      <a href="reorder-suggestions.html">Reorder Suggestions</a>
+      <a href="purchase-orders.html">Purchase Orders</a>
+      <a href="receiving.html">Receiving</a>
+      <a href="suppliers.html">Suppliers</a>
+      <a href="billing-plans.html">Billing &amp; Plans</a>
+      <a href="data-privacy.html">Data &amp; Privacy</a>
+      <a href="troubleshooting.html">Troubleshooting</a>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" data-faq-item data-category="migrating-from-stocky" data-search="Stocky is shutting down August 31, 2026 &mdash; will Stockloop import my Stocky data? <p>Yes. Go to Settings &rarr; Import from Stocky and upload the CSV exports for suppliers, products, and purchase order history (export these from Stocky before it shuts down &mdash; Stocky does not let Shopify migrate this for you automatically). Stockloop reconciles the import against your live Shopify catalog and flags any SKU or supplier it can't match so you can fix it manually. Do this well before August 31 &mdash; once Stocky is gone, its data cannot be recovered from anywhere but your own exports.</p>">
+  <summary>Stocky is shutting down August 31, 2026 &mdash; will Stockloop import my Stocky data?</summary>
+  <div class="faq-answer"><p>Yes. Go to Settings &rarr; Import from Stocky and upload the CSV exports for suppliers, products, and purchase order history (export these from Stocky before it shuts down &mdash; Stocky does not let Shopify migrate this for you automatically). Stockloop reconciles the import against your live Shopify catalog and flags any SKU or supplier it can't match so you can fix it manually. Do this well before August 31 &mdash; once Stocky is gone, its data cannot be recovered from anywhere but your own exports.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="migrating-from-stocky" data-search="Which Stocky exports do I need, and how do I get them? <p>From Stocky, export: Suppliers (CSV), Purchase Orders (CSV), and Reorder/Min-Max settings if you use them. Stocky's own export tools are the only source for this &mdash; Shopify does not retain it after shutdown. We recommend exporting everything by September 30, 2026 even if you're not ready to switch yet, simply so the data exists somewhere safe.</p>">
+  <summary>Which Stocky exports do I need, and how do I get them?</summary>
+  <div class="faq-answer"><p>From Stocky, export: Suppliers (CSV), Purchase Orders (CSV), and Reorder/Min-Max settings if you use them. Stocky's own export tools are the only source for this &mdash; Shopify does not retain it after shutdown. We recommend exporting everything by September 30, 2026 even if you're not ready to switch yet, simply so the data exists somewhere safe.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="migrating-from-stocky" data-search="Will my Stocky reorder points and min/max settings carry over exactly? <p>Stockloop reads imported min/max values as a starting point, but it recalculates suggestions going forward using its own velocity-and-lead-time model rather than freezing your old static thresholds forever. This usually improves accuracy within a few weeks, but expect the first suggestions after migration to shift somewhat from what Stocky showed.</p>">
+  <summary>Will my Stocky reorder points and min/max settings carry over exactly?</summary>
+  <div class="faq-answer"><p>Stockloop reads imported min/max values as a starting point, but it recalculates suggestions going forward using its own velocity-and-lead-time model rather than freezing your old static thresholds forever. This usually improves accuracy within a few weeks, but expect the first suggestions after migration to shift somewhat from what Stocky showed.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="migrating-from-stocky" data-search="I can't export something from Stocky (e.g. old POs) &mdash; is it lost? <p>If a field genuinely isn't exportable from Stocky, it will not be recoverable after August 31, 2026 &mdash; this is a Stocky limitation, not a Stockloop one. Export what you can now (suppliers and PO history are the most commonly missed). If you're stuck on a specific export, message us and we'll walk you through Stocky's export screens directly.</p>">
+  <summary>I can't export something from Stocky (e.g. old POs) &mdash; is it lost?</summary>
+  <div class="faq-answer"><p>If a field genuinely isn't exportable from Stocky, it will not be recoverable after August 31, 2026 &mdash; this is a Stocky limitation, not a Stockloop one. Export what you can now (suppliers and PO history are the most commonly missed). If you're stuck on a specific export, message us and we'll walk you through Stocky's export screens directly.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="migrating-from-stocky" data-search="Does Stockloop cost more than Stocky, which was free? <p>Stockloop is a paid app because it's independently built and maintained (Stocky was subsidized as part of Shopify POS Pro). Pricing is flat &mdash; Free, $29, $59, or $99/month depending on catalog size and locations &mdash; with no per-order or per-PO fees, so your cost doesn't scale with sales volume the way some alternatives' usage-based pricing does.</p>">
+  <summary>Does Stockloop cost more than Stocky, which was free?</summary>
+  <div class="faq-answer"><p>Stockloop is a paid app because it's independently built and maintained (Stocky was subsidized as part of Shopify POS Pro). Pricing is flat &mdash; Free, $29, $59, or $99/month depending on catalog size and locations &mdash; with no per-order or per-PO fees, so your cost doesn't scale with sales volume the way some alternatives' usage-based pricing does.</p></div>
+</details>
+    </div>
+    <div class="article-cta">
+      <p>Still stuck? Chat with us.</p>
+      <a class="btn btn-primary" href="../support.html">Contact support</a>
+    </div>
+  </div>
+</section>
+
+</main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Stockloop</div>
+          <p class="footer-tag">Purchase orders, reorder suggestions, and receiving for Shopify merchants moving on from Stocky.</p>
+        </div>
+        <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../help/index.html">Help Center</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../support.html">Support</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Migrating</h4>
+        <ul>
+          <li><a href="../index.html#stocky-faq">Stocky migration FAQ</a></li>
+          <li><a href="../help/migrating-from-stocky.html">Import from Stocky</a></li>
+          <li><a href="../blog/reorder-point-formula.html">Reorder point math</a></li>
+        </ul>
+      </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Omoseka Inc. All rights reserved.</span>
+        <span>Stockloop is not affiliated with or endorsed by Shopify Inc.</span>
+      </div>
+    </div>
+  </footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Stockloop config: placeholder domain "https://stockloop.io", placeholder support address "support@stockloop.io", placeholder App Store URL "https://apps.shopify.com/stockloop". Find-replace these three values across the site before going live. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reorder Suggestions &mdash; Stockloop Help</title>
+<meta name="description" content="How the reorder math works, and what to check first when a suggestion looks wrong. Stockloop help center category.">
+<link rel="canonical" href="https://stockloop.io/help/reorder-suggestions.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+
+  <link rel="icon" href="../favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Stockloop
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../help/index.html" aria-current="page">Help</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="../support.html">Support</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-secondary" href="../support.html">Support</a>
+        <a class="btn btn-primary" href="https://apps.shopify.com/stockloop" rel="noopener">Install on Shopify</a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+<main id="main">
+
+<section class="section" style="padding-top:40px;">
+  <div class="container wrap-narrow">
+    <p class="breadcrumbs"><a href="index.html">Help Center</a> &rsaquo; Reorder Suggestions</p>
+    <h1>Reorder Suggestions</h1>
+    <p style="color:var(--text-muted); font-size:var(--text-md); margin-bottom:24px;">How the reorder math works, and what to check first when a suggestion looks wrong.</p>
+    <div class="help-category-nav">
+      <a href="getting-started.html">Getting Started</a>
+      <a href="migrating-from-stocky.html">Migrating from Stocky</a>
+      <a href="reorder-suggestions.html" class="is-active">Reorder Suggestions</a>
+      <a href="purchase-orders.html">Purchase Orders</a>
+      <a href="receiving.html">Receiving</a>
+      <a href="suppliers.html">Suppliers</a>
+      <a href="billing-plans.html">Billing &amp; Plans</a>
+      <a href="data-privacy.html">Data &amp; Privacy</a>
+      <a href="troubleshooting.html">Troubleshooting</a>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" data-faq-item data-category="reorder-suggestions" data-search="How does Stockloop calculate a reorder suggestion? <p>Three inputs: (1) your sales velocity &mdash; units sold per day, averaged over a rolling window (default 30 days, configurable to 14, 60, or 90); (2) the supplier's lead time in days, from the Suppliers tab; (3) a safety-stock buffer, a number of extra days of cover you set per product or collection (default 7 days). The suggested reorder quantity covers velocity &times; (lead time + safety stock) minus what you already have on hand and on order. You can see the exact numbers behind any suggestion by clicking it.</p>">
+  <summary>How does Stockloop calculate a reorder suggestion?</summary>
+  <div class="faq-answer"><p>Three inputs: (1) your sales velocity &mdash; units sold per day, averaged over a rolling window (default 30 days, configurable to 14, 60, or 90); (2) the supplier's lead time in days, from the Suppliers tab; (3) a safety-stock buffer, a number of extra days of cover you set per product or collection (default 7 days). The suggested reorder quantity covers velocity &times; (lead time + safety stock) minus what you already have on hand and on order. You can see the exact numbers behind any suggestion by clicking it.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="reorder-suggestions" data-search="Why did my velocity window jump around after a sale or stockout? <p>A short window (14 days) reacts fast to real demand shifts but can be skewed by a promo spike or a stockout that suppressed sales. Switch to a 60 or 90-day window for steadier products, or manually exclude a date range (Settings &rarr; Velocity &rarr; Exclude dates) if a specific promotion or outage shouldn't count.</p>">
+  <summary>Why did my velocity window jump around after a sale or stockout?</summary>
+  <div class="faq-answer"><p>A short window (14 days) reacts fast to real demand shifts but can be skewed by a promo spike or a stockout that suppressed sales. Switch to a 60 or 90-day window for steadier products, or manually exclude a date range (Settings &rarr; Velocity &rarr; Exclude dates) if a specific promotion or outage shouldn't count.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="reorder-suggestions" data-search="A suggestion looks wrong &mdash; how do I check why? <p>Click the suggestion to open its breakdown: velocity used, window, lead time, safety stock, and current stock/on-order quantities. Most 'wrong' suggestions trace to a missing or outdated supplier lead time, or a velocity window that includes an unusual spike or stockout. Fix the underlying input and the suggestion recalculates automatically &mdash; you don't need to edit the suggestion itself.</p>">
+  <summary>A suggestion looks wrong &mdash; how do I check why?</summary>
+  <div class="faq-answer"><p>Click the suggestion to open its breakdown: velocity used, window, lead time, safety stock, and current stock/on-order quantities. Most "wrong" suggestions trace to a missing or outdated supplier lead time, or a velocity window that includes an unusual spike or stockout. Fix the underlying input and the suggestion recalculates automatically &mdash; you don't need to edit the suggestion itself.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="reorder-suggestions" data-search="Can I override a suggested quantity? <p>Yes, always. Open the suggestion or the draft PO and edit the quantity directly before sending &mdash; overrides never get overwritten by recalculation once a PO is created. If you frequently override the same product the same way, consider adjusting its safety-stock buffer instead so future suggestions start closer to what you actually want.</p>">
+  <summary>Can I override a suggested quantity?</summary>
+  <div class="faq-answer"><p>Yes, always. Open the suggestion or the draft PO and edit the quantity directly before sending &mdash; overrides never get overwritten by recalculation once a PO is created. If you frequently override the same product the same way, consider adjusting its safety-stock buffer instead so future suggestions start closer to what you actually want.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="reorder-suggestions" data-search="What's a sensible safety-stock setting? <p>As a starting point: fast-moving, reliable-supplier products can use 3&ndash;7 days; slow-moving or unreliable-lead-time products (especially imported goods) often need 14&ndash;30 days. There's no universal number &mdash; it should reflect how much lead-time variability and demand volatility you actually see for that product.</p>">
+  <summary>What's a sensible safety-stock setting?</summary>
+  <div class="faq-answer"><p>As a starting point: fast-moving, reliable-supplier products can use 3&ndash;7 days; slow-moving or unreliable-lead-time products (especially imported goods) often need 14&ndash;30 days. There's no universal number &mdash; it should reflect how much lead-time variability and demand volatility you actually see for that product.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="reorder-suggestions" data-search="Does Stockloop account for seasonality? <p>Not automatically in v1 &mdash; the velocity calculation is a rolling average, not a seasonal forecast. For seasonal products, shorten the velocity window as the season approaches, or manually adjust safety stock upward ahead of known peaks (e.g., before a holiday).</p>">
+  <summary>Does Stockloop account for seasonality?</summary>
+  <div class="faq-answer"><p>Not automatically in v1 &mdash; the velocity calculation is a rolling average, not a seasonal forecast. For seasonal products, shorten the velocity window as the season approaches, or manually adjust safety stock upward ahead of known peaks (e.g., before a holiday).</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="reorder-suggestions" data-search="Why does a new product have no reorder suggestion? <p>New products need sales history before Stockloop can calculate a velocity. Until then, set a manual reorder point (Product &rarr; Reorder settings) so Stockloop can still suggest a quantity based on your estimate rather than waiting for data.</p>">
+  <summary>Why does a new product have no reorder suggestion?</summary>
+  <div class="faq-answer"><p>New products need sales history before Stockloop can calculate a velocity. Until then, set a manual reorder point (Product &rarr; Reorder settings) so Stockloop can still suggest a quantity based on your estimate rather than waiting for data.</p></div>
+</details>
+      <details class="faq-item" data-faq-item data-category="reorder-suggestions" data-search="Can I set different lead times per supplier for the same product? <p>Yes &mdash; lead time is set at the supplier level and applied to whichever supplier is assigned as primary for that product. If a product has backup suppliers with different lead times, switching the primary supplier updates the suggestion accordingly.</p>">
+  <summary>Can I set different lead times per supplier for the same product?</summary>
+  <div class="faq-answer"><p>Yes &mdash; lead time is set at the supplier level and applied to whichever supplier is assigned as primary for that product. If a product has backup suppliers with different lead times, switching the primary supplier updates the suggestion accordingly.</p></div>
+</details>
+    </div>
+    <div class="article-cta">
+      <p>Still stuck? Chat with us.</p>
+      <a class="btn btn-primary" href="../support.html">Contact support</a>
+    </div>
+  </div>
+</section>
+
+</main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Stockloop</div>
+          <p class="footer-tag">Purchase orders, reorder suggestions, and receiving for Shopify merchants moving on from Stocky.</p>
+        </div>
+        <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../help/index.html">Help Center</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../support.html">Support</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Migrating</h4>
+        <ul>
+          <li><a href="../index.html#stocky-faq">Stocky migration FAQ</a></li>
+          <li><a href="../help/migrating-from-stocky.html">Import from Stocky</a></li>
+          <li><a href="../blog/reorder-point-formula.html">Reorder point math</a></li>
+        </ul>
+      </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Omoseka Inc. All rights reserved.</span>
+        <span>Stockloop is not affiliated with or endorsed by Shopify Inc.</span>
+      </div>
+    </div>
+  </footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>
